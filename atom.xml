@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>clickmouse&#39;s wiki</title>
+  
+  <subtitle>To record what I learned</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://clickmouse.github.io/"/>
+  <updated>2020-01-21T14:40:08.209Z</updated>
+  <id>https://clickmouse.github.io/</id>
+  
+  <author>
+    <name>clickmouse</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My first blog</title>
+    <link href="https://clickmouse.github.io/2020/01/21/master/"/>
+    <id>https://clickmouse.github.io/2020/01/21/master/</id>
+    <published>2020-01-21T14:36:39.765Z</published>
+    <updated>2020-01-21T14:40:08.209Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Start">Start</h2><p>I have tried to write my first blog.</p><h2 id="Test">Test</h2><p>It’s just a test.</p>]]></content>
+    
+    <summary type="html">
+    
+      It&#39;s interesting to create a blog. I will record what I do in future.
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://clickmouse.github.io/2020/01/21/hello-world/"/>
+    <id>https://clickmouse.github.io/2020/01/21/hello-world/</id>
+    <published>2020-01-21T12:56:23.633Z</published>
+    <updated>2020-01-21T14:57:41.104Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      My first attempt
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="https://clickmouse.github.io/categories/blog/"/>
+    
+    
+      <category term="blog" scheme="https://clickmouse.github.io/tags/blog/"/>
+    
+  </entry>
+  
+</feed>
