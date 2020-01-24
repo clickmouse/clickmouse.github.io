@@ -18,8 +18,8 @@
   
   <entry>
     <title>My first blog</title>
-    <link href="https://clickmouse.github.io/2020/01/21/master/"/>
-    <id>https://clickmouse.github.io/2020/01/21/master/</id>
+    <link href="https://clickmouse.github.io/master/"/>
+    <id>https://clickmouse.github.io/master/</id>
     <published>2020-01-21T14:36:39.765Z</published>
     <updated>2020-01-21T14:40:08.209Z</updated>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://clickmouse.github.io/2020/01/21/hello-world/"/>
-    <id>https://clickmouse.github.io/2020/01/21/hello-world/</id>
+    <link href="https://clickmouse.github.io/hello-world/"/>
+    <id>https://clickmouse.github.io/hello-world/</id>
     <published>2020-01-21T12:56:23.633Z</published>
     <updated>2020-01-21T14:57:41.104Z</updated>
     
