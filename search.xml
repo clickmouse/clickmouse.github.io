@@ -18,8 +18,7 @@
 <p>Binutils are a set of programming tools for creating and managing binary programs, object files, libraries, profile, data and assembly source code.<sup>[5]</sup></p>
 <p>Let’s go back to GNU toolchain.</p>
 <p>As we all know, the compilation process is a sequential process.</p>
-<img src="C:\Users\Administrator\Desktop\I\clickmouse_blog\source\_posts\GNU_image\toolchain.png" alt="compile" style="zoom:60%;" />
-<center>Fig.1 The procedure of compilation</center>
+<img src="/GNU/toolchain.png" class title="The procedure of compilation">
 <p>Tools are used one by one. Consequently, they form a toolchain which takes source files as input and executable files as output. The details of preprocessing, compilation, assembly and linking will be hidden by using the toolchain.</p>
 <h2 id="Reference">Reference</h2>
 <p>[1] <a href="https://en.wikipedia.org/wiki/GNU" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU</a></p>
