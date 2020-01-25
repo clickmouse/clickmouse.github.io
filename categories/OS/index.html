@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 <link rel="alternate" href="/atom.xml" title="clickmouse"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://clickmouse.github.io/archives/2020/01/"/>
+<link rel="canonical" href="https://clickmouse.github.io/categories/OS/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
@@ -37,7 +37,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Archives - clickmouse
+    <title>OS · clickmouse
   </title>
   <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="clickmouse" type="application/atom+xml">
 </head>
@@ -106,31 +106,16 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            2 Posts In Total
-          </span>
+          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title category">
+          <h2 class="archive-name">OS</h2>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2020</h2>
-          </div>
-        <div class="archive-post">
+      <div class="archive-post">
         <span class="archive-post-time">
-          01-25
+          2020-01-25
           </span>
         <span class="archive-post-title">
           <a href="/GNU/" class="archive-post-link">
             A brief understanding of GNU
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          01-21
-          </span>
-        <span class="archive-post-title">
-          <a href="/hello-world/" class="archive-post-link">
-            Hello World
           </a>
         </span>
       </div>
@@ -161,7 +146,30 @@
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+    </div>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"/>
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '6170919e622371b87c21',
+    clientSecret: '2d002a7dac1fbe035d6997c72cebb9df83b8dc24',
+    repo: 'blog_comments',
+    owner: 'clickmouse',
+    admin: ['clickmouse'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
