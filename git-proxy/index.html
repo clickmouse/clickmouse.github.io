@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<link rel="alternate" href="/atom.xml" title="clickmouse"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://clickmouse.github.io/archives/2020/"/>
+<meta name="description" content="Speed up git"/><meta name="keywords" content="git, proxy, clickmouse" /><link rel="alternate" href="/atom.xml" title="clickmouse"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://clickmouse.github.io/git-proxy/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
@@ -37,8 +37,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Archives - clickmouse
-  </title>
+    <title>Speed up git - clickmouse</title>
   <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="clickmouse" type="application/atom+xml">
 </head>
 
@@ -106,45 +105,79 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            3 Posts In Total
-          </span>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Speed up git
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-29
+        </span><span class="post-category">
+            <a href="/categories/git/">git</a>
+            </span>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2020</h2>
-          </div>
-        <div class="archive-post">
-        <span class="archive-post-time">
-          01-29
-          </span>
-        <span class="archive-post-title">
-          <a href="/git-proxy/" class="archive-post-link">
-            Speed up git
-          </a>
-        </span>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-ssr-option-setting"><span class="toc-text">Configure ssr option setting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-proxy-setting-in-ubuntu"><span class="toc-text">Configure proxy setting in ubuntu</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>Recently, I have bought a server from <a href="http://www.vultr.com" target="_blank" rel="noopener">www.vultr.com</a>. I used it to build a ladder to speed up git because it’s an urgent need for me.</p>
+<a id="more"></a>
+<h2 id="Prerequisites">Prerequisites</h2>
+<p>SSR server</p>
+<h2 id="Configure-ssr-option-setting">Configure ssr option setting</h2>
+<ol>
+<li>right click the small plane</li>
+<li>click option setting</li>
+<li>enable connection from LAN</li>
+</ol>
+<center><img src="/git-proxy/ssr.png" class></center>
+<br>
+<center><img src="/git-proxy/local_host.png" class></center>
+<h2 id="Configure-proxy-setting-in-ubuntu">Configure proxy setting in ubuntu</h2>
+<p><strong>Windows:  win-10</strong></p>
+<p><strong>ubuntu version: 18.04</strong></p>
+<ol>
+<li>Use ipconfig in windows terminal and note down your ip address</li>
+<li>Change Network Proxy from off to Manual</li>
+<li>change HTTP Proxy and HTTPS Proxy to your ip address</li>
+</ol>
+<center><img src="/git-proxy/proxy_setting.png" class></center>
+<br>
+<center><img src="/git-proxy/in_proxy.png" class></center>
+<p>Done. Now you can have better experience when using git.</p>
+
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          01-25
-          </span>
-        <span class="archive-post-title">
-          <a href="/GNU/" class="archive-post-link">
-            A brief understanding of GNU
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          01-21
-          </span>
-        <span class="archive-post-title">
-          <a href="/hello-world/" class="archive-post-link">
-            Hello World
-          </a>
-        </span>
-      </div>
-    </section><nav class="pagination"></nav></div></div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://clickmouse.github.io">clickmouse</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://clickmouse.github.io/git-proxy/">https://clickmouse.github.io/git-proxy/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/git/">git</a>
+            <a href="/tags/proxy/">proxy</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/GNU/">
+        <span class="next-text nav-default">A brief understanding of GNU</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="gitalk-container"></div>
+    </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zhangxv@zju.edu.cn" class="iconfont icon-email" title="email"></a>
@@ -171,7 +204,30 @@
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+    </div>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"/>
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '6170919e622371b87c21',
+    clientSecret: '2d002a7dac1fbe035d6997c72cebb9df83b8dc24',
+    repo: 'blog_comments',
+    owner: 'clickmouse',
+    admin: ['clickmouse'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
