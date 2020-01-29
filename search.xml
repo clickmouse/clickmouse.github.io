@@ -1,65 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>A brief understanding of GNU</title>
-    <url>/GNU/</url>
-    <content><![CDATA[<p>I have used software produced by GNU project for many years like gcc&amp;g++. However I even don’t know what GNU is. Today when I saw the term ‘GNU toolchain’, I decided to figure out what GNU is.</p>
-<a id="more"></a>
-<h2 id="GNU">GNU</h2>
-<p>GNU is an operating system and an extensive collection of computer software.<sup> [1]</sup> Actually, this definition has answered my question.  We can simply regard it as a replacement of Unix.  However, it’s operating system kernel, Hurd has not been developed for a long time.  So, the currently more popular Unix-like operating system is GNU/Linux or Linux.<sup>[2]</sup> If Hurd can be developed before 1991, maybe Linus didn’t need to do something ‘just for fun’.</p>
-<h2 id="Base-system-sup-3-sup">Base system<sup>[3]</sup></h2>
-<p>Some names are very familiar to me such as bash, grep, gzip and tar. I will go further in the future.</p>
-<h2 id="Software-sup-3-sup">Software<sup>[3]</sup></h2>
-<p>GNU toolchain, what I mentioned at the beginning of this blog is included in this section. Other libraries like glibc are also included.</p>
-<p>Know more about software of GNU, please refer to the third reference.</p>
-<h2 id="GNU-toolchain">GNU toolchain</h2>
-<p>The GNU toolchain is a broad collection of programming tools produced by the GNU Project, which is used for developing software applications and operating systems.<sup>[4]</sup></p>
-<p>Some tools like ‘make’, ‘GCC’, ‘GDB’ are familiar to me, while some names are a bit strange to me like ‘GNU Binutils’.  Actually, I have used tools included in it such as objdump and readelf.</p>
-<p>Binutils are a set of programming tools for creating and managing binary programs, object files, libraries, profile, data and assembly source code.<sup>[5]</sup></p>
-<p>Let’s go back to GNU toolchain.</p>
-<p>As we all know, the compilation process is a sequential process.</p>
-<img src="/GNU/compile.png" class>
-<center>Fig.1 The procedure of compilation</center>
-<p>Tools are used one by one. Consequently, they form a toolchain which takes source files as input and executable files as output. The details of preprocessing, compilation, assembly and linking will be hidden by using the toolchain.</p>
-<h2 id="Reference">Reference</h2>
-<p>[1] <a href="https://en.wikipedia.org/wiki/GNU" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU</a></p>
-<p>[2] <a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy</a></p>
-<p>[3] <a href="https://en.wikipedia.org/wiki/List_of_GNU_packages#Software_development" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/List_of_GNU_packages#Software_development</a></p>
-<p>[4] <a href="https://en.wikipedia.org/wiki/GNU_toolchain" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU_toolchain</a></p>
-<p>[5] <a href="https://en.wikipedia.org/wiki/GNU_Binutils" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU_Binutils</a></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>A brief understanding of GNU</title>
+      <link href="/GNU/"/>
+      <url>/GNU/</url>
+      
+        <content type="html"><![CDATA[<p>I have used tools developed by GNU project for many years like gcc&amp;g++. However I even don’t know what GNU is. Today when I saw the term ‘GNU toolchain’, I decided to figure out what GNU is.</p><a id="more"></a><h2 id="GNU">GNU</h2><p>GNU is an operating system and an extensive collection of computer software.<sup> [1]</sup> Actually, this definition has answered my question.  We can simply regard it as a replacement of Unix.  However, it’s operating system kernel, Hurd has not been developed for a long time.  So, the currently more popular Unix-like operating system is GNU/Linux or Linux.<sup>[2]</sup> If Hurd can be developed before 1991, maybe Linus didn’t need to do something ‘just for fun’.</p><h2 id="Base-system-sup-3-sup">Base system<sup>[3]</sup></h2><p>Some names are very familiar to me such as bash, grep, gzip and tar. I will go further in the future.</p><h2 id="Software-sup-3-sup">Software<sup>[3]</sup></h2><p>GNU toolchain, what I mentioned at the beginning of this blog is included in this section. Other libraries like glibc are also included.</p><p>Know more about software of GNU, please refer to the third reference.</p><h2 id="GNU-toolchain">GNU toolchain</h2><p>The GNU toolchain is a broad collection of programming tools produced by the GNU Project, which is used for developing software applications and operating systems.<sup>[4]</sup></p><p>Some tools like ‘make’, ‘GCC’, ‘GDB’ are familiar to me, while some names are a bit strange to me like ‘GNU Binutils’.  Actually, I have used tools included in it such as objdump and readelf.</p><p>Binutils are a set of programming tools for creating and managing binary programs, object files, libraries, profile, data and assembly source code.<sup>[5]</sup></p><p>Let’s go back to GNU toolchain.</p><p>As we all know, the compilation process is a sequential process.</p><img src="/GNU/compile.png" class><center>Fig.1 The procedure of compilation</center>Tools are used one by one. Consequently, they form a toolchain which takes source files as input and executable files as output. The details of preprocessing, compilation, assembly and linking will be hidden by using the toolchain.<h2 id="Reference">Reference</h2><p>[1] <a href="https://en.wikipedia.org/wiki/GNU" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU</a></p><p>[2] <a href="https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy</a></p><p>[3] <a href="https://en.wikipedia.org/wiki/List_of_GNU_packages#Software_development" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/List_of_GNU_packages#Software_development</a></p><p>[4] <a href="https://en.wikipedia.org/wiki/GNU_toolchain" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU_toolchain</a></p><p>[5] <a href="https://en.wikipedia.org/wiki/GNU_Binutils" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/GNU_Binutils</a></p>]]></content>
+      
+      
       <categories>
-        <category>OS</category>
+          
+          <category> OS </category>
+          
       </categories>
-      <tags>
-        <tag>GNU</tag>
-        <tag>OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<a id="more"></a>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> GNU </tag>
+            
+            <tag> OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/hello-world/"/>
+      <url>/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
       <categories>
-        <category>blog</category>
+          
+          <category> blog </category>
+          
       </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
