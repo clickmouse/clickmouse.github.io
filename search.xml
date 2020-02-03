@@ -116,6 +116,11 @@
 <p><strong>password:  busybear</strong></p>
 <center><img src="/run-riscv-on-qemu/busybear.png" class></center>
 <center> Fig.2 Run riscv on qemu </center>
+<p>If you want to shutdown QEMU. There are two methods.</p>
+<ol>
+<li><code>ctrl+A+X</code> but it doesn’t work on my system.</li>
+<li><code>ps aux|grep qemu</code> find the <code>pid</code> of <code>qemu-riscv64</code>. <code>kill pid</code></li>
+</ol>
 <h1>Acknowledgement</h1>
 <p>The whole procedure refers to riscv-getting-started<sup>[7]</sup></p>
 <p><a href="www.github.com/vamosC">Chao Liang</a> helps me download the source code of riscv-gnu-toolchain.</p>
