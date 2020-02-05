@@ -123,7 +123,7 @@
 </ol>
 <h1>Acknowledgement</h1>
 <p>The whole procedure refers to riscv-getting-started<sup>[7]</sup></p>
-<p><a href="www.github.com/vamosC">Chao Liang</a> helps me download the source code of riscv-gnu-toolchain.</p>
+<p><a href="https://www.github.com/vamosC" target="_blank" rel="noopener">Chao Liang</a> helps me download the source code of riscv-gnu-toolchain.</p>
 <h1>Reference</h1>
 <p>[1] <a href="https://stackoverflow.com/questions/39419379/git-stuck-while-receiving-objects/43757291" target="_blank" rel="noopener">stuck while receiving objects</a></p>
 <p>[2] <a href="https://en.wikipedia.org/wiki/Runtime_library" target="_blank" rel="noopener">Runtime library</a></p>
