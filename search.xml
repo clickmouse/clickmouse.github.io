@@ -22,7 +22,7 @@
 <p>Finally, I asked a senior studying in Japan to help me clone it and send it to me.</p>
 <center><img src="/run-riscv-on-qemu/japan.png" class></center>
 <center>Fig 1 Envy</center>
-# Get riscv-gnu-toolchain
+<h1>Get riscv-gnu-toolchain</h1>
 <h3 id="Prerequisites">Prerequisites</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev git</span><br></pre></td></tr></table></figure>
 <p>To make sure you have <code>git</code> on your system before the next step. Other standard packages are needed to build the toolchain.</p>
