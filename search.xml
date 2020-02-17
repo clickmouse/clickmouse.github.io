@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Learn Linux-0.12</title>
+    <url>/Learn-Linux0_12/</url>
+    <content><![CDATA[<p>很多基础知识自己都不懂，因此想要从Linux-0.12开始从基础学起，这篇博客作为自己的阅读笔记，不定时更新，为方便记录和不曲解原意，本篇博客用中文叙述。</p>
+<p>本博客的参考资料为赵炯先生的<a href="http://oldlinux.org/download/CLK-5.0-WithCover.pdf" target="_blank" rel="noopener">《Linux内核完全注释 V5.0》</a></p>
+<a id="more"></a>
+<h3 id="组成部分">组成部分</h3>
+<p>Linux 0.12 版本发布于 199 2 年 1 月15 日。在发布时包括以下文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bootimage-0.12.Z - 具有美国键盘代码的压缩启动映像文件；</span><br><span class="line">rootimage-0.12.Z - 以1200kB压缩的根文件系统映像文件；</span><br><span class="line">linux-0.12.tar.Z - 内核源代码文件。大小为130KB，展开后也仅有463KB；</span><br><span class="line">as86.tar.Z 		 - Bruce Evans&#39;二进制执行文件。是16位的汇编程序和装入程序；</span><br><span class="line">INSTALL-0.11 	 - 更新过的安装信息文件。</span><br></pre></td></tr></table></figure>
+<p><code>bootimage</code>引导启动Image文件，包括<strong>磁盘引导扇区代码</strong>、<strong>操作系统加载程序</strong>和<strong>内核执行代码</strong>。</p>
+<p>PC机启动时 ROM BIOS中的程序会把默认启动驱动器上的<strong>引导扇区代码和数据</strong>读入内存，引导扇区代码负责把<strong>操作系统加载程序</strong>和<strong>内核执行代码</strong>读入内存，然后把控制权交给<strong>操作系统加载程序</strong>进一步准备内核初始化操作，最终加载程序把控制权交给<strong>内核代码</strong>。</p>
+<br>
+<p>内核代码若要正常运行需要文件系统支持，<code>rootimage</code>是用于向内核提供最基本支持的根文件系统，包括操作系统最起码的<strong>配置文件</strong>和<strong>命令执行程序</strong>。</p>
+<p>UNIX类文件系统主要包括一些规定的目录、配置文件、设备驱动程序、开发程序以及所有其他用户数据或文本文件等。</p>
+<p><code>bootimage</code>+<code>rootimage</code>相当于一张可启动的DOS操作系统盘</p>
+<p><code>as86.tar.Z</code> 是 16 位汇编器 链接程序软件包 。 <code>linux 0.12.tar.Z</code> 是 压缩的 Linux 0.12 内核源代码。<br>
+<code>INSTALL 0.11</code>是Linux 0.11 系统的简单安装说明文档，它同样适用于使用0.12内核的Linux系统 。</p>
+<h1>内核编程语言和环境</h1>
+<h3 id="as86">as86</h3>
+<p>汇编命令行的基本格式为：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">as [选项] -o objfile srcfile</span><br></pre></td></tr></table></figure>
+<p><code>选项</code>用来控制编译过程以产生指定格式和设置的目标文件。</p>
+<p><code>srcfile</code> 是一个文本文件。该文件内容必须是由换行字符结尾的一系列文本行组成。</p>
+<p>语句分类：</p>
+<ol>
+<li>只包含空格、制表符、和换行符的空行</li>
+<li>赋值（定义）语句：标识符后跟等号+表达式 例如“BOOTSEG = 0x07C0&quot;</li>
+<li>伪操作符语句：不产生代码，由伪操作码和0个或多个操作数组成</li>
+<li>机器指令语句</li>
+</ol>
+]]></content>
+      <categories>
+        <category>os</category>
+      </categories>
+      <tags>
+        <tag>os</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Learn how to write Makefile</title>
+    <url>/Learn-Makefile/</url>
+    <content><![CDATA[<p><code>make</code> and <code>Makefile</code> are very important when building a project. As a programmer using Windows, I know little about <code>Makefile</code>.</p>
+<p>I will record what I learned about <code>make</code> and <code>Makefile</code>.</p>
+<a id="more"></a>
+<h1>Introduction</h1>
+<h3 id="Rule">Rule</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">target ... : prerequisites ...</span><br><span class="line">           <span class="built_in">command</span></span><br><span class="line">           ...</span><br><span class="line">           ...</span><br></pre></td></tr></table></figure>
+<p><code>target</code> is an object file. It can be <code>.o</code> file or any <code>elf</code> file. It can also be a <code>label</code>.</p>
+<p><code>prerequisites</code> are files or objects needed to generate <code>target</code>.</p>
+<p><code>command</code> is any shell command needed to be executed</p>
+<h3 id="Example">Example</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">main: main.o</span><br><span class="line">		cc -o main.o</span><br><span class="line">main.o: main.c defs.h</span><br><span class="line">		cc -c main.c</span><br><span class="line">clean:</span><br><span class="line">		rm main main.o</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>We will use <code>main.c</code> and <code>defs.h</code> to compile <code>main.c</code> to generate <code>main.o</code>.</p>
+</li>
+<li>
+<p>We will use link <code>main.o</code>  to generate <code>main</code></p>
+</li>
+<li>
+<p><code>clean</code> is a name of an action. Noting is behind <code>:</code> means no <code>prerequisites</code>. So when we execute <code>make</code>, commands under <code>clean</code> won’t be executed automatically. We must write <code>clean</code>, this label after <code>make</code> obviously.</p>
+</li>
+</ol>
+<h3 id="How-does-it-work">How does it work</h3>
+<p>The whole procedure is like a stack. To build <code>a</code> , we need <code>b c d</code>. If <code>b c d</code> don’t exist, we need to build <code>b c d</code>. Maybe we need <code> e f g</code> to build <code>b c d</code>.</p>
+<p>Finally, we will find all basic files we need and ‘pop’ files one after another. If not, <code>make</code> will fail.</p>
+<h3 id="Variable">Variable</h3>
+<p>Now, we have a more complicated example:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">edit : main.o kbd.o command.o display.o /</span><br><span class="line">		insert.o search.o files.o utils.o</span><br><span class="line">		cc -o edit main.o kbd.o command.o display.o /</span><br><span class="line">			insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
+<p>As we can see, many <code>.o</code> file repeat two times, which means if we add or remove one file, we must change it in two places. It’s not convenient.</p>
+<p>To solve this problem, we can do like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">obj = main.o kbd.o command.o display.o /</span><br><span class="line">		insert.o search.o files.o utils.o</span><br><span class="line">edit: $(obj)</span><br><span class="line">		cc -o edit $(obj)</span><br></pre></td></tr></table></figure>
+<p>Now, we only need to change <code>obj</code> to reach our goals.</p>
+<h3 id="Automatic-derivation">Automatic derivation</h3>
+<p>Let’s see the first example</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">main.o: main.c defs.h</span><br><span class="line">		cc -c main.c</span><br></pre></td></tr></table></figure>
+<p>Actually, <code>make</code> knows <code>main.o</code> are built by <code>main.c</code>.  So, we don’t need to write a list of commands. The simplified one is like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">main.o: defs.h</span><br></pre></td></tr></table></figure>
+<p>We only need to point out the head file <code>main.o</code> needs.</p>
+<h3 id="Rules-for-clean">Rules for <code>clean</code></h3>
+<p>The original parts for <code>clean</code> are like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">clean:</span><br><span class="line">		rm main main.o</span><br></pre></td></tr></table></figure>
+<p>A more robust way of writing is like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.PHONY : clean</span><br><span class="line">clean: </span><br><span class="line">		-rm main main.o</span><br></pre></td></tr></table></figure>
+<p><code>.PHONY</code> means that <code>clean</code> is Pseudo target. If there exists a file named <code>clean</code>. <code>.PHONY</code> will take effect.</p>
+<p><code>-</code> means that maybe there’s something wrong with some of the files, but don’t worry. Go ahead.</p>
+<h1>Rules</h1>
+<h3 id="Search">Search</h3>
+<h4 id="VPATH">VPATH</h4>
+<p><code>VPATH</code> in <code>Makefile</code> will point out a directory. If files can’t be found in current directory, <code>make</code> will search in <code>VPATH</code>.</p>
+<center>VPATH = src:../headers</center>
+<p>In the example above, <code>VPATH</code> point out two directories: <code>src</code> and <code>../headers</code>. They are separated by <code>:</code>.</p>
+<h4 id="vpath">vpath</h4>
+<p>This is a keyword not a variable.</p>
+<p>There are 3 methods:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. vpath &lt;pattern&gt; &lt;directories&gt;</span><br><span class="line"><span class="comment">#Specify search &lt;directories&gt; for files that match the &lt;pattern&gt;</span></span><br><span class="line">2. vpath &lt;pattern&gt;</span><br><span class="line"><span class="comment">#Clear search &lt;directories&gt; for files that match the &lt;pattern&gt;</span></span><br><span class="line">3. vpath</span><br><span class="line"><span class="comment">#Clear all &lt;directories&gt; that have been set up</span></span><br></pre></td></tr></table></figure>
+<p><code>%</code> needs to be included in <code>&lt;pattern&gt;</code>. For example, <code>%.h</code> represents all files ending up with <code>.h</code>.</p>
+<h3 id="Pseudo-target">Pseudo target</h3>
+<p><code>clean</code> is a pseudo target. <code>.PHONY</code> specify a pseudo target obviously no matter whether there exists a file named <code>clean</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">all: prog1 prog2 prog3</span><br><span class="line">.PHONY: all</span><br><span class="line"></span><br><span class="line">prog1: prog1.o utils.o</span><br><span class="line">	cc -o prog1 prog1.o utils.o</span><br><span class="line"></span><br><span class="line">prog2: prog2.o</span><br><span class="line">	cc -o prog2 prog2.o</span><br><span class="line"></span><br><span class="line">prog3: prog3.o sort.o utils.o</span><br><span class="line">	cc -o prog3 prog3.o sort.o utils.o</span><br></pre></td></tr></table></figure>
+<p>The first target in <code>Makefile</code> will be used as its default target.</p>
+<p><code>all</code> is a pseudo target depending on three other targets. By this way, many targets can be built together.</p>
+]]></content>
+      <categories>
+        <category>Makefile</category>
+      </categories>
+      <tags>
+        <tag>Makefile</tag>
+        <tag>os</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Run riscv on qemu</title>
     <url>/run-riscv-on-qemu/</url>
     <content><![CDATA[<p>This blog is about the whole procedure of running riscv on qemu. It also records some pitfalls I encountered.</p>
